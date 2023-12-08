@@ -1,0 +1,38 @@
+.seat{
+  background-color: green;
+  height: 30px;
+  width: 35px;
+  margin: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.seat.selected{
+  background-color: blue;
+}
+
+.seat.occupied{
+  background-color: black;
+}
+
+.seat:nth-last-of-type(4n){
+  margin-right: 20px;
+}
+
+.screen{
+  background-color: silver;
+  height: 70px;
+  width: 100%;
+  margin: 15px -15px;
+  transform: perspective(400px) rotateX(-45deg);
+}
+
+.showcase{
+  display: flex;
+  margin-top: 10px;
+}
+
+#cost{
+ margin: 0px 500px;
+ 
+}

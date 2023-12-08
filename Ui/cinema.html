@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>cinema</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+
+          <div class="dropdown">
+            <button style="width: 400px;" class="btn btn-secondary dropdown-toggle" type="button"
+              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Location
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Visakhapatan</a></li>
+              <li><a class="dropdown-item" href="#">Gajuwaka</a></li>
+              <li><a class="dropdown-item" href="#">NAD</a></li>
+              <li><a class="dropdown-item" href="#">Madhurawada</a></li>
+
+            </ul>
+          </div>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/71ea58184089579.Y3JvcCw0MzU3LDM0MDgsNTYwLDA.jpg"
+            class="image" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://img.freepik.com/free-vector/online-cinema-concept-with-human-hand-holding-smartphone-with-application-watching-movie-internet_107791-4997.jpg?w=1380&t=st=1701925070~exp=1701925670~hmac=58a90442ab874938bcc69629c3888f49dfc790bb6a07bd9ab2b8fd1444fa8fee"
+            class="image" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1701500752835_webb.jpg" class="d-block w-100"
+            alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- heading   starting -->
+  <div style="margin: 20px; text-align:center">
+    <h1>Entri Multiplex</h1>
+</div>
+
+<div class="container" style="display: flex; align-items:center; justify-content:center">
+    <div>
+        <label>Select Cinema: </label>
+        <select class="form-control" id="movie">
+            {{#each movies}}
+            <option value="{{rate}}">{{name}}/screen{{screenNo}}- Rs {{rate}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+
+
+    <ul class="showcase" style="list-style-type:none; margin:50px; margin-top:100px " >
+        <li>
+            <div class="seat"></div>
+            <small>Available</small>
+        </li>
+        <li>
+            <div class="seat  selected"></div>
+            <small>Seleted</small>
+        </li>
+        <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
+
+
+
+
+
+    <div style="width: 350px;">
+        <div class="screen"></div>
+        
+        <div class="row" id="screen1" style="visibility: hidden; display:none" >
+            {{#each screen1}}
+            <div class="seat {{status}}"  id="{{seatno}}"></div>
+
+            {{/each}}
+
+
+
+
+        </div>
+        <div class="row" id="screen2" style="visibility: hidden; display:none">
+            {{#each screen2}}
+            <div class="seat {{status}}"  id="{{seatno}}"></div>
+            {{/each}}
+        </div>
+
+
+
+
+        <div class="row" id="screen3" style="visibility: hidden; display:none">
+            {{#each screen3}}
+            <div class="seat {{status}}"  id="{{seatno}}"></div>
+            {{/each}}
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
+<div id="finalCost" style="display: none; visibility:hidden">
+    <p id="cost"></p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

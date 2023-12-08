@@ -1,0 +1,121 @@
+
+body {
+  background-color: #657383; 
+  color: #fff;
+}
+
+
+
+.seat {
+  background-color: green;
+  height: 30px;
+  width: 35px;
+  margin: 2px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.seat.selected {
+  background-color: blue;
+}
+
+.seat.occupied {
+  background-color: black;
+}
+
+.seat:nth-last-of-type(4n) {
+  margin-right: 20px;
+}
+
+.screen {
+  background-color: silver;
+  height: 70px;
+  width: 100%;
+  margin: 15px -15px;
+  transform: perspective(400px) rotateX(-45deg);
+}
+
+.showcase {
+  display: flex;
+  margin-top: 10px;
+}
+
+#cost {
+  margin: 0px 500px;
+  
+
+}
+
+li small {
+  margin: 5px;
+}
+
+.image {
+  height: 300px;
+  width: 100%;
+}
+
+
+#finalCost {
+  display: none;
+  visibility: hidden;
+ 
+  padding: 10px;
+ 
+}
+
+#cost {
+  display: block;
+  visibility: visible;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  width: 500px;
+  margin-left: 200px;
+
+}
+
+
+
+.day {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Style for the day and show time selects */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.day {
+  margin-bottom: 20px;
+}
+
+
+
+h1 {
+  text-align: center;
+  margin: 20px;
+  background: linear-gradient(45deg, #4CAF50, #FFC107); /* Green to Amber gradient */
+ 
+  color: black;
+}
+ h1::first-letter{
+  color: red;
+ }
+
+ 
